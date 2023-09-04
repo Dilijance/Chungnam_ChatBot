@@ -9,3 +9,10 @@ my first touch
 import time
 def main()
 print('this is test')
+class Test:
+    def __init__(self, name):
+        self.name = "PY"
+
+def main():
+    test = Test("Me")
+    print(test)

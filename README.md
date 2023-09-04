@@ -1,2 +1,2 @@
 # Chungnam_ChatBot
-I love Allinka
+My first git

@@ -7,5 +7,5 @@ import requests
 download_root = 'pytorch_main/data/MNIST_DATASET'
 
 train_dataset = MNIST(download_root, transform=mnist_transform, train=True, download=True)
-train_dataset = MNIST(download_root, transform=mnist_transform, train=False, download=True)
-train_dataset = MNIST(download_root, transform=mnist_transform, train=False, download=True)
+valid_dataset = MNIST(download_root, transform=mnist_transform, train=False, download=True)
+test_dataset = MNIST(download_root, transform=mnist_transform, train=False, download=True)

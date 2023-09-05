@@ -12,11 +12,11 @@ class MyDataset(Dataset):
     
     def __getitem__(self, idx):
         sample = torch.tensor(self.label.iloc[idx, 1:4]).int()
-        label = torch.tensor(self.label.iloc[idx, 3]).int()
+        label = torch.tensor(self.label.iloc[idx, 1]).int()
         return sample, label
     
-tensor_dataset = MyDataset('pytorch_main/test.csv')
-dataset = DataLoader(tensor_dataset, batch_size=4, shuffle=True)    
+tensor_dataset = MyDataset('CSV_Files/test.csv')
+dataset = DataLoader(tensor_dataset, batch_size=4, shuffle=False)    
 
-for i, data in enumerate(dataset, 0):
+for i, data in enumerate(dataset):
     print(i, data[0])

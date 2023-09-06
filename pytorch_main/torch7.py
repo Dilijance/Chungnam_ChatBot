@@ -1,8 +1,6 @@
 import torch.nn as nn
 import torch
 
-
-
 class SingleLayer(nn.Module):
     def __init__(self, inputs):
         super(SingleLayer, self).__init__()

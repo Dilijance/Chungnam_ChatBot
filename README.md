@@ -6,15 +6,26 @@ my first touch
     * Test
 
 AI, Machine Learning, Deep Learning etc..
+* DataSets
+    * Training set
+    * Validation set
+    * Test set
 * Learning Process
-    * learn by TESTING cases
-    * test through TEST cases
+    * learn by TRAINING MODEL
+    * test through TEST MODEL
 
 * Torch
-    * Tensor
-        * Batch_size: Controlling size of an output tensor(Torch5)
-        * Shuffle True/False: Random order of data(Torch5)
-        * %DType=int(8-64): No idea what is it%
+    * Types of storing data
+        * Scalar - One point/ 0 Dim / Dot in space
+        * Vector - Line of data / 1 Dim
+        * Matrix - 2D screen 
+        * Tensor - Main Building block for PyTorch!
+            * Tensors can use basic operations(+, -, *..etc)
+                * Also possible to multiplicate one tensor to another by torch.matmul()
+                * http://matrixmultiplication.xyz/ fun and easy to understand it!
+            * Batch_size: Controlling size of an output tensor(Torch5)
+            * Shuffle True/False: Random order of data(Torch5)
+            * DType=float/int(16 & 32): Precision of storing data in memory(less precision of number -> more speed of calculating vise-versa) 
 
 ```python
 #Class creating & most useful def's
@@ -50,5 +61,8 @@ import requests
 
 #Data visualizer (seems like the most fun)
 import matplotlib.pyplot as plt
-```
 
+#Creating Tensor
+My_tensor = torch.tensor(dtype=, shape= , device=)
+
+#

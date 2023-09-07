@@ -31,7 +31,7 @@ labels_map = {
     8: "Bag",
     9: "Ankle Boot",
 }
-figure = plt.figure(figsize=(10, 10))
+figure = plt.figure(figsize=(8, 8))
 cols, rows = 3, 3
 for i in range(1, cols * rows + 1):
     sample_idx = torch.randint(len(training_data), size=(1,)).item()

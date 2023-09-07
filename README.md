@@ -72,6 +72,9 @@ import requests
 
 #Data visualizer (Visualize, visualize, visualize!)
 import matplotlib.pyplot as plt
+
+#Allows you to use paths in your os
+from pathlib import Path
 ```
 
 # OOP
@@ -227,7 +230,38 @@ for epoch in range(epochs):
 
             print(model_0.state_dict())
 
-
 # Start the Show!
 plot_predictions(prediction=y_preds_new)
+
+
+
+# Three main steps for saving
+# 1. torch.save - allows save a PyTorch object in Pythons pickle format
+# 2. torch.load = allows load a saved PyTorch object
+# 3. torch.nn.Module.load_state_dict() - this allows to load a model's saved state dictionary
+
+## PyTorch Save and Load Model
+
+
+# 1. Create Model directory
+
+MODEL_PATH = Path("models")
+MODEL_PATH.mkdir(parents=True, exist_ok=True)
+
+# 2. Create a model save path
+MODEL_NAME = "01_pytorch_workflow_model_0.pth"
+MODEL_SAVE_PATH = MODEL_PATH / MODEL_NAME
+
+# 3. Save the model state dict
+torch.save(obj=model_0.state_dict(), f=MODEL_SAVE_PATH)
+
+
+
+# Load a model.state_dict
+
+# To load in a saved state_dict we have to instantiate a new instance of our model class
+
+loaded_model_0 = LinearRegressionModel()
+
+loaded_model_0.load_state_dict(torch.load(f=MODEL_SAVE_PATH))
 ```

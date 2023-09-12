@@ -118,7 +118,6 @@ X_train, y_train = X[:train_split], y[:train_split]
 X_test, y_test = X[train_split:], y[train_split:]
 
 
-
 # Visualize Data in Dot Graph
 def plot_predictions(train_data=X_train,
                      train_labels = y_train,

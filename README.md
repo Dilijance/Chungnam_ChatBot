@@ -139,7 +139,6 @@ def plot_predictions(train_data=X_train,
     plt.show()
 
 
-
 # Making Model for Linear Regression
 class LinearRegressionModel(nn.Module):
     def __init__(self):
@@ -153,7 +152,6 @@ class LinearRegressionModel(nn.Module):
         return self.weight * x + self.bias
 
 
-
 # Control of randomness of our future testing cases
 torch.manual_seed(42)
 model_0 = LinearRegressionModel()
@@ -164,12 +162,10 @@ with torch.inference_mode():
     y_preds = model_0(X_test)
 
 
-
 #Setup a loss function
 loss_fn = nn.L1Loss()
 #Setup an optimizer (stochastic gradient descent)
 optimizer = torch.optim.SGD(params=model_0.parameters(), lr=0.01)
-
 
 
 # Building a training loop (and a testing loop) in PyTorch
@@ -203,14 +199,12 @@ for epoch in range(epochs):
     model_0.eval()
 
 
-
 # Visualize loss per epoch
     plt.plot(epoch_count, np.array(torch.tensor(loss_values).numpy()), label="Train loss")
     plt.plot(epoch_count, test_loss_value, label="Test loss")
     plt.title("Training and test loss values")
     plt.ylabel("Loss")
     plt.xlabel("Epochs")
-
 
 
 # After Training results
@@ -231,7 +225,6 @@ for epoch in range(epochs):
 
 # Start the Show!
 plot_predictions(prediction=y_preds_new)
-
 
 
 # Three main steps for saving
@@ -255,7 +248,6 @@ MODEL_SAVE_PATH = MODEL_PATH / MODEL_NAME
 torch.save(obj=model_0.state_dict(), f=MODEL_SAVE_PATH)
 
 
-
 # Load a model.state_dict
 
 # To load in a saved state_dict we have to instantiate a new instance of our model class
@@ -263,4 +255,10 @@ torch.save(obj=model_0.state_dict(), f=MODEL_SAVE_PATH)
 loaded_model_0 = LinearRegressionModel()
 
 loaded_model_0.load_state_dict(torch.load(f=MODEL_SAVE_PATH))
+```
+
+## Non-Linear Model Code --- 2023-09-12
+```
+
+
 ```
